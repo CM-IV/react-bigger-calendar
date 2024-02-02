@@ -1,18 +1,17 @@
 {
-  "name": "react-big-calendar",
-  "version": "1.8.7",
-  "description": "Calendar! with events",
+  "name": "@cm-iv/react-bigger-calendar",
+  "version": "1.8.8",
+  "description": "Calendar! with events and work month view",
   "author": {
-    "name": "Jason Quense",
-    "email": "monastic.panic@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jquense/react-big-calendar.git"
+    "name": "CM-IV"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CM-IV/react-bigger-calendar.git"
   },
   "license": "MIT",
   "main": "lib/index.js",
@@ -41,7 +40,7 @@
     "prepublishOnly": "yarn build",
     "prettier": "prettier '**/*js' '!lib/**' --write ",
     "storybook": "start-storybook -p 9002",
-    "test": "yarn lint && NODE_ENV=test jest",
+    "test": "NODE_ENV=test jest",
     "tdd": "NODE_ENV=test jest --watch"
   },
   "peerDependencies": {
@@ -111,6 +110,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
+    "classnames": "^2.5.1",
     "clsx": "^1.2.1",
     "date-arithmetic": "^4.1.0",
     "dayjs": "^1.11.7",
@@ -126,9 +126,5 @@
     "prop-types": "^15.8.1",
     "react-overlays": "^5.2.1",
     "uncontrollable": "^7.2.1"
-  },
-  "bugs": {
-    "url": "https://github.com/jquense/react-big-calendar/issues"
-  },
-  "homepage": "https://github.com/jquense/react-big-calendar#readme"
+  }
 }
