@@ -1,7 +1,7 @@
 import React from 'react'
 
 import MonthView from './Month'
-import cn from 'classnames'
+import clsx from 'clsx'
 import * as dates from './utils/dates'
 import chunk from 'lodash/chunk'
 import Header from './Header'
@@ -47,13 +47,18 @@ class WorkMonthView extends MonthView {
   render() {
     let { date, localizer, className } = this.props,
       month = visibleWorkDays(date, localizer),
-      weeks = chunk(month, 5)
+      weeks = chunk(month, 6)
 
     this._weekCount = weeks.length
 
     return (
-      <div className={cn('rbc-month-view', className)}>
-        <div className="rbc-row rbc-month-header">
+      <div
+        className={clsx('rbc-month-view', className)}
+        role="table"
+        aria-label="Month View"
+        ref={this.containerRef}
+      >
+        <div className="rbc-row rbc-month-header" role="row">
           {this.renderHeaders(weeks[0])}
         </div>
         {weeks.map(this.renderWeek)}
